@@ -17,6 +17,22 @@ export default class Utility {
         });
     }
 
+    createElements(elements) {
+        return elements.map(({ tagName, content = '', attributes = {} }) => {
+            const element = document.createElement(tagName);
+            if (content) element.textContent = content;
+            this.setAttributes(element, attributes);
+            return element;
+        });
+    }
+
+    setAttributes(element, attributes) {
+        for (const key in attributes) {
+            element.setAttribute(key, attributes[key]);
+        }
+    }
+
+    
     async loadHtmlTemplate(url, targetElementId) {
         try {
             const response = await fetch(url);
@@ -41,21 +57,7 @@ export default class Utility {
         return document.querySelector(selector);
     }
 
-    createElements(elements) {
-        return elements.map(({ tagName, content = '', attributes = {} }) => {
-            const element = document.createElement(tagName);
-            if (content) element.textContent = content;
-            this.setAttributes(element, attributes);
-            return element;
-        });
-    }
-
-    setAttributes(element, attributes) {
-        for (const key in attributes) {
-            element.setAttribute(key, attributes[key]);
-        }
-    }
-
+    
     async loadHtmlTemplate(url, targetElementId) {
         try {
             const response = await fetch(url);
