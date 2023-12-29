@@ -57,11 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     pageManager.createDynamicLayout(elementData);
 });
 
-const $_ProjectStatus = {
-    "Project_Status" : 
-    "In Progress"
-}; 
-
 
 /* 
 GitHub - Source: https://github.com/mlwebdev-js/-__fsFramework_P.git
