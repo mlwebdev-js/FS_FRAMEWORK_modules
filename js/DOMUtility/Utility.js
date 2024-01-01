@@ -1,4 +1,4 @@
-// js/Utility.js
+// js/DOMUtility/Utility.js
 export default class Utility {
     constructor() {}
 
@@ -16,6 +16,15 @@ export default class Utility {
             return element;
         });
     }
+    
+        // Method:  setAttributes => Invocation
+        setAttributes(element, attributes) {
+            for (const key in attributes) {
+                element.setAttribute(key, attributes[key]);
+            }
+        }
+    
+    
 
     async loadHtmlTemplate(url, targetElementId) {
         try {

@@ -13,7 +13,7 @@
     font-weight: bold sans-serif ;
 }
 
-.form-submit-button {
+.form-submit-button, #loadAbout, #loadContact {
     background: #44a2ee;
     color: #fff;
     height: 50px;
@@ -27,7 +27,6 @@
     text-shadow: none;
     margin: 20px 0px 20px 0px;
     padding:20px;
-
     }
 
 

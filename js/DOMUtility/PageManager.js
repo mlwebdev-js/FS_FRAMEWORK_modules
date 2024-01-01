@@ -1,4 +1,4 @@
-// js/PageManager.js
+// js/DOMUtility/PageManager.js
 import Utility from './Utility.js';
 
 export default class PageManager {
@@ -39,19 +39,21 @@ export default class PageManager {
     }
 
     setupEventListeners() {
-        this.utility.fs('#loadAbout').addEventListener(
-            'click', () => this.controller.loadAboutPage());
-        this.utility.fs('#loadContact').addEventListener(
-            'click', () => this.controller.loadContactPage());
+
+        this.utility.fs('#loadAbout').addEventListener('click', () => {
+            history.pushState({}, '', 'about');
+            this.controller.loadAboutPage();
+        });
+        this.utility.fs('#loadContact').addEventListener('click', () => {
+            history.pushState({}, '', 'contact');
+            this.controller.loadContactPage();
+        });
+        // this.utility.fs('#loadContact').addEventListener(
+        //     'click', () => this.controller.loadContactPage());
     }
 
     createDynamicLayout(elementData) {
-        const elements = this.utility.createElements(
-            elementData);
-        elements.forEach(element => this.root.appendChild(
-            element)
-        );
+        const elements = this.utility.createElements(elementData);
+        elements.forEach(element => this.root.appendChild(element));
     }
 }
-
-

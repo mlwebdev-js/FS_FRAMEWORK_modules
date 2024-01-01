@@ -1,4 +1,4 @@
-// js/Controller.js
+// js/DOMUtility/Controller.js
 export default class Controller {
     constructor(utility, validation) {
         this.utility = utility;

@@ -1,3 +1,4 @@
+// js/FormUtility/FormModel.js
 export class FormModel {
     constructor(containerId) {
         this.container = document.getElementById(containerId);
@@ -55,6 +56,5 @@ export class FormModel {
         } catch (error) {
             console.log("ERROR: Unsuccessful Submission");
         }
-    }
-    
+    }   
 }
